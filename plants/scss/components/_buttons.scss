@@ -1,0 +1,15 @@
+%btn {
+  font-weight: 400;
+  background-color: transparent;
+  border-radius: 9px
+}
+
+.header-btn {
+  @extend %btn;
+
+  font-family: $primary-font;
+  text-transform: uppercase;
+  margin-top: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+}

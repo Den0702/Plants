@@ -1,0 +1,25 @@
+.header {
+  height: 666px;
+  //position: relative;
+  //todo: define background color
+}
+
+.welcome {
+  @include flexbox($flex-wrap: nowrap);
+  @include flex-align(space-between, center);
+  
+  .welcome-description {
+    flex-basis: 572px;
+    font-size: 20px;
+  }
+  
+  .desc {
+    line-height: 35px;
+    letter-spacing: 1px;
+  }
+
+  .main-header {
+    margin: 5px 0 50px 0;  
+  }
+  
+}
