@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1252px;
+  margin: 0 auto;
+}
+
+.section-header {
+  font-family: $secondary-font;
+  font-size: 45px;
+  line-height: 50px;
+}
