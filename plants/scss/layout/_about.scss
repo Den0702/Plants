@@ -1,0 +1,32 @@
+.about {
+
+  @include flexbox(nowrap);
+  @include flex-align(space-between, center);
+  
+  padding-top: 82.6px;
+  padding-bottom: 106px;
+
+  .about-description {
+    flex-basis: 594px;
+
+    .section-header {
+      font-weight: $primary-font-weight;
+      color: #499A18;
+    }
+
+    p {
+      font-size: $regular-font-size;
+      line-height: 30px;
+      color: $main-text-color;
+    }
+  }
+
+  .about-bg {
+    background-image: url("../assets/img/houseplant-1.png");//sciezka jest wzgledem katalogu css/
+    width: 464px;
+    height: 479px;
+  }
+
+
+}
+
