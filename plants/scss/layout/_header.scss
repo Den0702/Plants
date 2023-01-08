@@ -1,25 +1,74 @@
 .header {
-  height: 666px;
   //position: relative;
   //todo: define background color
-}
-
-.welcome {
-  @include flexbox($flex-wrap: nowrap);
-  @include flex-align(space-between, center);
-  
-  .welcome-description {
-    flex-basis: 572px;
-    font-size: 20px;
-  }
-  
-  .desc {
-    line-height: 35px;
-    letter-spacing: 1px;
-  }
+  font-weight: $primary-font-weight;
+  background-color: $bg-color-section;
 
   .main-header {
-    margin: 5px 0 50px 0;  
+    font-size: 45px;
+    margin: 14px 0 44px 0;
+    font-family: $primary-font-family;
+    color: #717171;
   }
-  
+
+  .nav {
+    @include flexbox;
+    @include flex-align(space-between, center);
+
+    padding: 44px 94px;
+
+    .logo {
+      height: 22px;
+      align-self: flex-start;
+      margin: 5px 15px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .menu {
+      flex-basis: 500px;
+      
+      .menu-item {
+        display: inline-block;
+        margin: 0 21.7px;
+        padding: 20px 0;
+        line-height: 1.5;
+        font-family: $secondary-font-family;
+        font-weight: $primary-font-weight;
+
+        a {
+          color: #010201;
+
+          &:hover {
+            color: #E06733;
+            transition: color .3s;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .section.welcome {
+    @include flexbox(nowrap);
+    @include flex-align(space-between, center);
+
+    padding: 0 96px 87.6px;
+    
+    .welcome-description {
+      flex-basis: 572px;
+      font-size: $regular-font-size;
+
+      p {
+        line-height: 35px;
+        color: $main-text-color;
+      }
+    }
+
+
+  }
 }

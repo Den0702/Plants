@@ -7,9 +7,17 @@
 .header-btn {
   @extend %btn;
 
-  font-family: $primary-font;
   text-transform: uppercase;
   margin-top: 25px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px 27px;
+  font-size: $small-font-size;
+  color: #010201;
+  border: 2px solid #E06733;
+
+  &:hover {
+    color: #fff;
+    background-color: #E06733;
+    transition: all .3s;
+  }
+  
 }

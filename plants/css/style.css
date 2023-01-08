@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/* |SECTION PROPERTIES|  */
+/* background colors */
+/* text-colors */
+/* |FONT PROPERTIES| */
+/* font sizes */
+/*font weights */
 article,
 aside,
 details,
@@ -231,6 +237,10 @@ input[type=checkbox], input[type=radio] {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -238,6 +248,7 @@ body {
   justify-content: space-between;
   margin: 0;
   padding: 0;
+  font-family: Inter, sans-serif;
 }
 
 a {
@@ -251,14 +262,26 @@ ul {
 }
 
 .container {
-  max-width: 1252px;
+  max-width: 1440px;
   margin: 0 auto;
+}
+
+.section {
+  padding: 0 107px;
 }
 
 .section-header {
   font-family: Inika, sans-serif;
-  font-size: 45px;
+  font-size: 40px;
   line-height: 50px;
+}
+
+.emphasized-text-primary {
+  color: #499A18;
+}
+
+.emphasized-text-secondary {
+  color: #E06733;
 }
 
 .header-btn {
@@ -268,57 +291,100 @@ ul {
 }
 
 .header-btn {
-  font-family: Inter, sans-serif;
   text-transform: uppercase;
   margin-top: 25px;
-  padding: 10px 20px;
+  padding: 10px 27px;
   font-size: 16px;
+  color: #010201;
+  border: 2px solid #E06733;
+}
+.header-btn:hover {
+  color: #fff;
+  background-color: #E06733;
+  transition: all 0.3s;
 }
 
-.nav {
+.header {
+  font-weight: 400;
+  background-color: #EDF2EC;
+}
+.header .main-header {
+  font-size: 45px;
+  margin: 14px 0 44px 0;
+  font-family: Inter, sans-serif;
+  color: #717171;
+}
+.header .nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 44px 0;
+  padding: 44px 94px;
 }
-.nav .logo {
-  height: 20px;
+.header .nav .logo {
+  height: 22px;
   align-self: flex-start;
   margin: 5px 15px;
 }
-.nav .logo img {
+.header .nav .logo img {
   height: 100%;
 }
-.nav .menu .menu-item {
+.header .nav .menu {
+  flex-basis: 500px;
+}
+.header .nav .menu .menu-item {
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 21.7px;
   padding: 20px 0;
-  font-size: initial;
   line-height: 1.5;
+  font-family: Inika, sans-serif;
+  font-weight: 400;
 }
-.nav .menu .menu-item a {
-  font-weight: 700;
+.header .nav .menu .menu-item a {
+  color: #010201;
 }
-
-.header {
-  height: 666px;
+.header .nav .menu .menu-item a:hover {
+  color: #E06733;
+  transition: color 0.3s;
 }
-
-.welcome {
+.header .section.welcome {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 96px 87.6px;
 }
-.welcome .welcome-description {
+.header .section.welcome .welcome-description {
   flex-basis: 572px;
   font-size: 20px;
 }
-.welcome .desc {
+.header .section.welcome .welcome-description p {
   line-height: 35px;
-  letter-spacing: 1px;
+  color: #a3a2a2;
 }
-.welcome .main-header {
-  margin: 5px 0 50px 0;
+
+.about {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 82.6px;
+  padding-bottom: 106px;
+}
+.about .about-description {
+  flex-basis: 594px;
+}
+.about .about-description .section-header {
+  font-weight: 400;
+  color: #499A18;
+}
+.about .about-description p {
+  font-size: 20px;
+  line-height: 30px;
+  color: #a3a2a2;
+}
+.about .about-bg {
+  background-image: url("../assets/img/houseplant-1.png");
+  width: 464px;
+  height: 479px;
 }/*# sourceMappingURL=style.css.map */
