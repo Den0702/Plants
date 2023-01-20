@@ -1,0 +1,69 @@
+.price {
+  font-weight: $secondary-font-weight;
+  padding: 40px 104px 121px;
+
+  //redefiniuje wlasciwosci kontenera pod wymogi tej sekcji
+  .container {
+    @include flexbox;
+    @include flex-align(space-between, stretch)
+  }
+
+  .prices {
+
+    .price-list {
+      @include flexbox($flex-direction: column);
+      @include flex-align(space-evenly, center);
+      border: 1px solid #e3e1d5;
+      border-radius: 20px;
+      padding: 0 40px;
+      height: 279px;
+      margin-top: 64px;
+
+      .price-list-item {
+        @include flexbox;
+        @include flex-align(space-between, center);
+        width: 250px;
+        padding: 16px 40px;
+        background-color: #edf2ec;
+        border-radius: 20px;
+        cursor: pointer;
+
+        span {
+          font-size: $regular-font-size;
+        }
+
+        .prices-dropdown-icon {
+          background-color: #d9d9d9;
+
+          .drop-down-arrow {
+            stroke: #717171;
+          }
+        }
+
+      }
+
+    }
+  }
+
+  .prices-help {
+    text-align: right;
+    flex-basis: 500px;
+
+    background-image: url(../assets/img/leafs-small.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  .prices-heading {
+    font-family: $primary-font-family;
+    margin-top: 0;//todo: wyniesc to do styli globalnych
+  }
+
+  .prices-help-heading {
+    flex-basis: 400px;
+    font-size: $large-font-size;
+    margin-top: 0;
+  }
+
+
+}

@@ -1,0 +1,15 @@
+.row {
+  @include flexbox;
+}
+
+.col {
+  @include flexbox(nowrap, column);
+}
+
+.col-33p {
+  width: 33.33%;
+}
+
+.col-66p {
+  width: 66.66%;  
+}

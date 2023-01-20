@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -23,20 +27,16 @@ ul {
 }
 
 .container {
-  max-width: 1440px;
+  padding: 0 70px;
   margin: 0 auto;
+  max-width: 1420px;
 }
 
-.section {
-  padding: 0 107px;
-}
-
-.section-header {
+.section-heading {
   font-family: $secondary-font-family;
   font-size: 40px;
   line-height: 50px;
 }
-
 
 .emphasized-text-primary {
   color: #499A18;
@@ -45,4 +45,3 @@ ul {
 .emphasized-text-secondary {
   color: #E06733;
 }
-

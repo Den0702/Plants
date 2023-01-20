@@ -1,9 +1,26 @@
-@mixin flexbox($flex-wrap: wrap) {
+/* || LAYOUT ||  */
+@mixin flexbox($flex-wrap: wrap, $flex-direction: row) {
   display: flex;
   flex-wrap: $flex-wrap;
+  flex-direction: $flex-direction;
 }
 
 @mixin flex-align($justify, $align) {
   justify-content: $justify;
   align-items: $align;
 }
+
+/* || TEXT || */
+/* primary-font-weight to jest domyslny weigth, $main-text-color - domyslny kolor dla tego mixina */
+@mixin primary-text ($line-height, $font-weight: $primary-font-weight, $color: $main-text-color) {
+  font-family: $primary-font-family;
+  font-size: $regular-font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+
+ 
+
+
