@@ -4,7 +4,7 @@
 
   //redefiniuje wlasciwosci kontenera pod wymogi tej sekcji
   .container {
-    @include flexbox;
+    @include flexbox($flex-wrap: nowrap);
     @include flex-align(space-between, stretch)
   }
 
