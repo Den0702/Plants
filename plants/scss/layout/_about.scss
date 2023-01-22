@@ -18,10 +18,36 @@
     }
     
     .primary-paragraph {
-      @include primary-text(30px); //($line-height)
+      @include primary-text($line-height: 30px); //($line-height)
     }
   }
 
 
 
+}
+
+@media all and (min-width: 768px) and (max-width: 1439px) {
+  .about{
+    padding-top: 57px;
+
+    .about-bg {
+      background-image: url("../assets/img/houseplant-tablet.png");
+      background-position: bottom;
+    }
+
+    .about-description {
+      max-width: 687px;
+      height: 653px;
+      padding: 0 0 40px 30px;
+
+      .about-heading {
+        text-align: center;
+        padding-inline: 80px;
+        margin-top: 0;
+        margin-bottom: 55px;
+      }
+
+    }
+
+  }
 }
