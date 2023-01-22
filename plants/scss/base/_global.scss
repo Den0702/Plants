@@ -45,3 +45,15 @@ ul {
 .emphasized-text-secondary {
   color: #E06733;
 }
+
+@media all and (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    width: 95%;
+    padding: 0;
+  }
+
+  .section-heading {
+    font-size: 35px;
+    line-height: 45.5px;
+  }
+}
