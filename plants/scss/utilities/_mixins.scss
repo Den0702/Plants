@@ -12,12 +12,12 @@
 
 /* || TEXT || */
 /* primary-font-weight to jest domyslny weigth, $main-text-color - domyslny kolor dla tego mixina */
-@mixin primary-text ($line-height, $font-weight: $primary-font-weight, $color: $main-text-color) {
+@mixin primary-text ($line-height, $font-weight: $primary-font-weight, $color: $main-text-color, $font-size: $regular-font-size) {
   font-family: $primary-font-family;
-  font-size: $regular-font-size;
-  font-weight: $font-weight;
   line-height: $line-height;
+  font-weight: $font-weight;
   color: $color;
+  font-size: $font-size;
 }
 
 
