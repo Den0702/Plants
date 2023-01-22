@@ -33,3 +33,22 @@
     }
   }
 }
+
+@media all and (max-width: 1439px) {
+  .contact {
+    padding-top: 11px;
+    
+    .contact-bg {
+      height: 695px;
+      background-position: bottom;
+
+      .contact-dropdown {
+        margin: auto;
+      }
+    }
+    .contact-heading {
+      font-size: 40px;
+      margin-bottom: 100px;
+    }
+  }
+}

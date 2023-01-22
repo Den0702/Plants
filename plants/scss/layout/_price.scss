@@ -67,3 +67,19 @@
 
 
 }
+
+@media all and (max-width: 1439px) {
+  .price {
+    padding: 40px 46px 92px;
+    
+    .prices-help {
+      padding-top: 106px;
+      height: 455px;
+
+      .prices-help-heading {
+        font-size: 25px;
+      }
+
+    }
+  }
+}
