@@ -1,5 +1,5 @@
 .service {
-  padding: 23px 0 133px;
+  padding: 32px 0 133px;
   background-color: $bg-color-section;
 
   .service-header {
@@ -47,5 +47,33 @@
 
   .buttons-panel {
     margin-left: 43px;
+  }
+}
+
+
+@media all and (max-width: 1439px) {
+  .service {
+    padding: 32px 0 63px;
+    
+    .infoboxes {
+      @include flex-align(center, center);
+      margin-top: 10px;
+
+      .infobox {
+        min-width: 350px;
+      }
+    }
+
+    .service-header {
+      .service-heading {
+        width: 331px;
+        margin: 0.83em 0;
+        padding: 0 30px;
+      }
+    }
+    .buttons-panel {
+      margin-left: 17px;
+      margin-top: 12px;
+    }
   }
 }

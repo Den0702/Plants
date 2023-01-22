@@ -26,3 +26,19 @@
 
   }
 }
+
+@media all and (max-width: 1439px) {
+  .footer {
+    line-height: 33px;
+
+    .footer-container {
+      width: 415px;
+      padding: 28px 100px;
+      justify-content: center;
+
+      .footer-contacts {
+
+      }
+    }
+  }
+}
