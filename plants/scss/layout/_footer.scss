@@ -27,7 +27,7 @@
   }
 }
 
-@media all and (max-width: 1439px) {
+@media all and (max-width: 768px) {
   .footer {
     line-height: 33px;
 
@@ -35,10 +35,6 @@
       width: 415px;
       padding: 28px 100px;
       justify-content: center;
-
-      .footer-contacts {
-
-      }
     }
   }
 }

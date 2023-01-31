@@ -47,6 +47,12 @@
 
       }
 
+      
+    }
+
+    .mobile-hamburger {
+      cursor: pointer;
+      display: none;
     }
 
   }
@@ -78,9 +84,68 @@
   }
 }
 
-@media all and (max-width: 1439px) {
+
+@media all and (max-width: 649px) {
+  .header {
+    .welcome {
+      padding: 0;
+
+      .welcome-bg {
+        background-image: none;
+
+        .welcome-description {
+          width: 100%;
+          padding-top: 0;
+          
+          &-paragraph {
+            @include primary-text($line-height: 25px, $font-size: 16px);
+            /*         margin: 0;
+        font-size: 15px;
+        line-height: 25px;
+        transform: translateY(-7px); */
+          }
+        }
+      }
+    }
+    .main-header {
+      font-size: 25px;
+      line-height: 35px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
   .header {
 
+    .nav {
+      .menu {
+        display: none;
+      }
+
+      .mobile-hamburger {
+        display: block;
+
+        .hamburger-line {
+          display: block;
+          width: 40px;
+          height: 2px;
+          margin: 8px auto;
+          background-color: #717171;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+/*     .welcome {
+      .welcome-bg {
+        max-width: 739px;
+        margin: auto;
+      }
+    } */
+  }
+}
+
+@media all and (min-width: 650px) and (max-width: 1139px) {
+  .header {
     .main-header {
       font-size: 35px;
       margin: 0 0 36px; 
@@ -123,5 +188,23 @@
     }
   }
 
+}
 
+@media all and (min-width: 1140px) and (max-width: 1439px) {
+  .header {
+    .welcome {
+      padding: 0 0px 82px;
+
+      .welcome-bg {
+        background-image: url("../assets/img/leafs-lg-tablet.png");
+        .welcome-description-paragraph {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .main-header {
+      font-size: 40px;
+    }
+  }
 }
