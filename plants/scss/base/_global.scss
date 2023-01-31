@@ -29,7 +29,7 @@ ul {
 .container {
   padding: 0 70px;
   margin: 0 auto;
-  max-width: 1420px;
+  max-width: 1310px;
 }
 
 .section-heading {
@@ -46,14 +46,47 @@ ul {
   color: #E06733;
 }
 
-@media all and (max-width: 1439px) {
+
+@media all and (max-width: 768px){
   .container {
-    width: 95%;
-    padding: 0;
+    padding: 0 1%;
+  }
+}
+
+@media all and (max-width: 649px) {
+  .container {
+    padding: 0 6%;
   }
 
   .section-heading {
+    font-size: 25px;
+    line-height: 33px;
+  }
+  
+}
+
+@media all and (min-width: 650px) and (max-width: 1139px) {
+  .section-heading {
     font-size: 35px;
     line-height: 45.5px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 919px) {
+  .container {
+    padding: 0 22px;
+  }
+}
+
+@media all and (min-width: 920px) and (max-width: 1139px) {
+  .container {
+    max-width: 1024px;
+  }  
+}
+
+@media all and (min-width: 1140px) and (max-width: 1439px) {
+  .container {
+    max-width: 1140px;
+    //padding: 0;
   }
 }

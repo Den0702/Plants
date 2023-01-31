@@ -22,18 +22,43 @@
     }
   }
 
-
-
 }
 
-@media all and (max-width: 1439px) {
-  .about{
-    padding-top: 57px;
 
+
+@media all and (max-width: 1139px) {
+  .about {
     .about-bg {
       background-image: url("../assets/img/houseplant-tablet.png");
       background-position: bottom;
     }
+  }
+
+}
+@media all and (max-width: 649px){
+  .about {
+    padding-top: 0;
+    padding-bottom: 30px;
+
+    .about-bg {
+      background-image: url("../assets/img/houseplant-mobile.png");
+      //background-position: bottom;
+    }
+    .about-description {
+      padding: 25px 0 190px;
+
+      .primary-paragraph {
+        @include primary-text($line-height: 25px, $font-size: 15px);
+        //transform: translateY(-7px);
+      }
+
+    }
+  }
+}
+
+@media all and (min-width: 650px) and (max-width: 1139px)  {
+  .about{
+    padding-top: 57px;
 
     .about-description {
       max-width: 687px;
