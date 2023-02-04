@@ -76,64 +76,76 @@
         <div class="row service-header">
           <h2 class="section-heading service-heading col-33p">Service and our projects</h2>
           <div class="buttons-panel">
-            <button class="btn secondary-btn">Gardens</button>
-            <button class="btn secondary-btn">Lawn</button>
-            <button class="btn secondary-btn">Planting</button>
+            <button class="btn secondary-btn" data-toggle-class="gardens">Gardens</button>
+            <button class="btn secondary-btn" data-toggle-class="lawn">Lawn</button>
+            <button class="btn secondary-btn" data-toggle-class="planting">Planting</button>
           </div>
         </div>
         <div class="row infoboxes">
-          <div class="infobox col-33p">
-            <div class="img-holder">
-              <img src="./assets/img/first.jpg" class="infobox-img" alt="Planting">
-            </div>
-            <div class="infobox-caption">
-              <h3 class="infobox-title">Garden care</h3>
-              <p class="excerpt">Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-          <div class="infobox col-33p">
-            <div class="img-holder">
-              <img src="./assets/img/first-1.jpg" class="infobox-img" alt="Garden care">
-            </div>
-            <div class="infobox-caption">
-              <h3 class="infobox-title">Planting</h3>
-              <p class="excerpt">Lorem ipsum dolor sit amet</p>
+          <div class="infobox-overlay col-33p gardens">
+            <div class="infobox ">
+              <div class="img-holder">
+                <img src="./assets/img/first.jpg" class="infobox-img" alt="Planting">
+              </div>
+              <div class="infobox-caption">
+                <h3 class="infobox-title">Garden care</h3>
+                <p class="excerpt">Lorem ipsum dolor sit amet</p>
+              </div>
             </div>
           </div>
-          <div class="infobox col-33p">
-            <div class="img-holder">
-              <img src="./assets/img/first-2.jpg" class="infobox-img" alt="Planting">
-            </div>
-            <div class="infobox-caption">
-              <h3 class="infobox-title">Garden care</h3>
-              <p class="excerpt">Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-          <div class="infobox col-33p">
-            <div class="img-holder">
-              <img src="./assets/img/first-3.jpg" class="infobox-img" alt="Lawn care">
-            </div>
-            <div class="infobox-caption">
-              <h3 class="infobox-title">Planting</h3>
-              <p class="excerpt">Lorem ipsum dolor sit amet</p>
+          <div class="infobox-overlay col-33p planting">
+            <div class="infobox ">
+              <div class="img-holder">
+                <img src="./assets/img/first-1.jpg" class="infobox-img" alt="Garden care">
+              </div>
+              <div class="infobox-caption">
+                <h3 class="infobox-title">Planting</h3>
+                <p class="excerpt">Lorem ipsum dolor sit amet</p>
+              </div>
             </div>
           </div>
-          <div class="infobox col-33p">
-            <div class="img-holder">
-              <img src="./assets/img/first-4.jpg" class="infobox-img" alt="Planting">
-            </div>
-            <div class="infobox-caption">
-              <h3 class="infobox-title">Lawn care</h3>
-              <p class="excerpt">Lorem ipsum dolor sit amet</p>
+          <div class="infobox-overlay col-33p gardens">
+            <div class="infobox ">
+              <div class="img-holder">
+                <img src="./assets/img/first-2.jpg" class="infobox-img" alt="Planting">
+              </div>
+              <div class="infobox-caption">
+                <h3 class="infobox-title">Garden care</h3>
+                <p class="excerpt">Lorem ipsum dolor sit amet</p>
+              </div>
             </div>
           </div>
-          <div class="infobox col-33p">
-            <div class="img-holder">
-              <img src="./assets/img/first-5.jpg" class="infobox-img" alt="Garden care">
+          <div class="infobox-overlay col-33p planting">
+            <div class="infobox ">
+              <div class="img-holder">
+                <img src="./assets/img/first-3.jpg" class="infobox-img" alt="Lawn care">
+              </div>
+              <div class="infobox-caption">
+                <h3 class="infobox-title">Planting</h3>
+                <p class="excerpt">Lorem ipsum dolor sit amet</p>
+              </div>
             </div>
-            <div class="infobox-caption">
-              <h3 class="infobox-title">Planting</h3>
-              <p class="excerpt">Lorem ipsum dolor sit amet</p>
+          </div>
+          <div class="infobox-overlay col-33p lawn">
+            <div class="infobox ">
+              <div class="img-holder">
+                <img src="./assets/img/first-4.jpg" class="infobox-img" alt="Planting">
+              </div>
+              <div class="infobox-caption">
+                <h3 class="infobox-title">Lawn care</h3>
+                <p class="excerpt">Lorem ipsum dolor sit amet</p>
+              </div>
+            </div>
+          </div>
+          <div class="infobox-overlay col-33p planting">
+            <div class="infobox ">
+              <div class="img-holder">
+                <img src="./assets/img/first-5.jpg" class="infobox-img" alt="Garden care">
+              </div>
+              <div class="infobox-caption">
+                <h3 class="infobox-title">Planting</h3>
+                <p class="excerpt">Lorem ipsum dolor sit amet</p>
+              </div>
             </div>
           </div>
         </div>
@@ -145,27 +157,26 @@
           <h2 class="section-heading prices-heading">Prices</h2>
           <ul class="price-list">
             <li class="price-list-item">
+              <!-- todo: zrobic div'a z overflow: hidden, ktory ma sie rozwijac przy kliknieciu na price-list-item-->
+              <!-- i umiescic to wszystkich dzieci price-list-item'a do niego-->
               <span>Basics</span>
               <div class="prices-dropdown-icon circle">
-                <svg class="drop-down-arrow" width="6" height="4">
-                  <use href="./img/arrow-down.svg"></use>
-                </svg>
+                <object type="image/svg+xml" data="./assets/img/arrow-down.svg" class="drop-down-arrow" width="8" height="6">          
+                </object>
               </div>
             </li>
             <li class="price-list-item">
               <span>Standard</span>
               <div class="prices-dropdown-icon circle">
-                <svg class="drop-down-arrow" width="6" height="4">
-                  <use href="./img/arrow-down.svg"></use>
-                </svg>
+                <object type="image/svg+xml" data="./assets/img/arrow-down.svg" class="drop-down-arrow" width="8" height="6">          
+                </object>
               </div>
             </li>
             <li class="price-list-item">
               <span>Pro care</span>
               <div class="prices-dropdown-icon circle">
-                <svg class="drop-down-arrow" width="6" height="4">
-                  <use href="./img/arrow-down.svg"></use>
-                </svg>
+                <object type="image/svg+xml" data="./assets/img/arrow-down.svg" class="drop-down-arrow" width="8" height="6">          
+                </object>
               </div>
             </li>
           </ul>
@@ -184,9 +195,8 @@
           <div class="contact-dropdown">
             <span class="placeholder">City</span>
             <div class="contact-dropdown-icon circle">
-              <svg class="drop-down-arrow" width="6" height="4">
-                <use href="./img/arrow-down.svg"></use>
-              </svg>
+              <object type="image/svg+xml" data="./assets/img/arrow-down-contact.svg" class="drop-down-arrow" width="8" height="6">          
+              </object>
             </div>
           </div>
         </div>
@@ -209,28 +219,24 @@
         <li class="social-item">
           <a href="#" class="">
             <object type="image/svg+xml" data="./assets/img/social-list/inst.svg" class="social-icon">
-              Your browser does not support SVG
             </object>
           </a>
         </li>
         <li class="social-item">
           <a href="#">
             <object type="image/svg+xml" data="./assets/img/social-list/fb.svg" class="social-icon">
-              Your browser does not support SVG
             </object>
           </a>
         </li>
         <li class="social-item">
           <a href="#">
             <object type="image/svg+xml" data="./assets/img/social-list/tw.svg" class="social-icon">
-              Your browser does not support SVG
             </object>
           </a>
         </li>
         <li class="social-item">
           <a href="#">
             <object type="image/svg+xml" data="./assets/img/social-list/pinterest.svg" class="social-icon">
-              Your browser does not support SVG
             </object>
           </a>
         </li>

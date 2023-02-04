@@ -26,8 +26,9 @@
       .placeholder {
         @include primary-text($line-height: 52px);
       }
-
-      .contact-dropdown-icon {
+      
+      &-icon {
+        position: relative;
         background-color: #aea1a1;
       }
     }

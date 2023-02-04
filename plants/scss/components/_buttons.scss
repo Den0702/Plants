@@ -41,6 +41,11 @@
   border: none;
 }
 
+.active {
+  color: #fff;
+  background-color: #E06733;
+}
+
 @media all and (max-width: 649px) {
   .primary-btn {
     width: 100px;
