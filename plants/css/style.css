@@ -290,6 +290,13 @@ ul {
   color: #E06733;
 }
 
+.drop-down-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media all and (max-width: 768px) {
   .container {
     padding: 0 1%;
@@ -602,30 +609,32 @@ ul {
   align-items: center;
   margin-top: 70px;
 }
-.service .infoboxes .infobox {
+.service .infoboxes .infobox-overlay {
+  min-width: 280px;
+}
+.service .infoboxes .infobox-overlay .infobox {
   height: 438px;
   text-align: center;
   padding: 0 4%;
   margin-top: 49px;
-  min-width: 280px;
 }
-.service .infoboxes .infobox .img-holder {
+.service .infoboxes .infobox-overlay .infobox .img-holder {
   border-radius: 20px 20px 0 0;
   height: 300px;
   overflow: hidden;
 }
-.service .infoboxes .infobox .img-holder .infobox-img {
+.service .infoboxes .infobox-overlay .infobox .img-holder .infobox-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.service .infoboxes .infobox .infobox-caption {
+.service .infoboxes .infobox-overlay .infobox .infobox-caption {
   border: 1px solid #cac7c7;
   border-radius: 0 0 20px 20px;
   border-top: 0;
   padding: 6px 0;
 }
-.service .infoboxes .infobox .infobox-caption .infobox-title {
+.service .infoboxes .infobox-overlay .infobox .infobox-caption .infobox-title {
   font-family: Inter, sans-serif;
   line-height: 20px;
   font-weight: 700;
@@ -634,6 +643,9 @@ ul {
 }
 .service .buttons-panel {
   margin-left: 43px;
+}
+.service .blurred {
+  filter: blur(2px);
 }
 
 @media all and (max-width: 1139px) {
@@ -645,7 +657,7 @@ ul {
     align-items: center;
     margin-top: 10px;
   }
-  .service .infoboxes .infobox {
+  .service .infoboxes .infobox-overlay {
     min-width: 350px;
   }
   .service .service-header .service-heading {
@@ -698,9 +710,7 @@ ul {
 }
 .price .prices .price-list .price-list-item .prices-dropdown-icon {
   background-color: #d9d9d9;
-}
-.price .prices .price-list .price-list-item .prices-dropdown-icon .drop-down-arrow {
-  stroke: #717171;
+  position: relative;
 }
 .price .prices-help {
   text-align: right;
@@ -764,7 +774,8 @@ ul {
   color: #636060;
   font-size: 20px;
 }
-.contact .contact-bg .contact-dropdown .contact-dropdown-icon {
+.contact .contact-bg .contact-dropdown-icon {
+  position: relative;
   background-color: #aea1a1;
 }
 
@@ -865,6 +876,11 @@ ul {
   padding: 0;
   border-radius: 50%;
   border: none;
+}
+
+.active {
+  color: #fff;
+  background-color: #E06733;
 }
 
 @media all and (max-width: 649px) {

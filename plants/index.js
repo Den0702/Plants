@@ -1,29 +1,42 @@
-console.log(`Вёрстка соответствует макету. Ширина экрана 768px +24
-                блок <header> +2
-                секция welcome +3
-                секция about +4
-                секция service +2
-                секция prices +2
-                секция contacts +2
-                блок <footer> +1.5
-                Вёрстка соответствует макету. Ширина экрана 380px +24
-                блок <header> 0
-                секция welcome 0
-                секция about 0
-                секция service 0
-                секция prices 0
-                секция contacts 0
-                блок <footer> + 0
-                Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15
-                нет полосы прокрутки при ширине страницы от 1440рх до 380px +3.5
-                нет полосы прокрутки при ширине страницы от 380px до 320рх +4
-                На ширине экрана 380рх и меньше реализовано адаптивное меню +22 (Допускается появление адаптивного меня на ширине более 380, но не допускается на ширине более 770px)
-                при ширине страницы 380рх панель навигации скрывается, появляется бургер-иконка 0
-                при нажатии на бургер-иконку плавно появляется адаптивное меню 0
-                адаптивное меню соответствует цветовой схеме макета 0
-                при нажатии на крестик адаптивное меню плавно скрывается уезжая за экран 0
-                ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям 0
-                при клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, также скрытие меню происходит если сделать клик вне данного окна 0
+const buttonsPanel = document.querySelector('.buttons-panel');
 
-                Самооценка: 24
+const manageOverlays = (event) => {
+  
+  /* jezeli klikamy poza przycisk */
+  if (event.target.tagName != 'BUTTON') {
+    return false;
+  }
+  let button = event.target;
+  button.classList.toggle('active');
+
+  const notActiveButtons = buttonsPanel.querySelectorAll(':not(.active)');
+  const activeButtons = buttonsPanel.querySelectorAll('.active');
+
+  for( const button of notActiveButtons) {
+    document.querySelectorAll('.' + button.dataset.toggleClass).forEach(overlay => {
+      overlay.classList.add('blurred');
+    })
+  }
+  for( const button of activeButtons) {
+    document.querySelectorAll('.' + button.dataset.toggleClass).forEach(overlay => {
+      overlay.classList.remove('blurred');
+    })
+  }
+  
+  if (notActiveButtons.length === 1) {
+    notActiveButtons[0].setAttribute('disabled', true);
+  } else {
+    notActiveButtons[0].setAttribute('disabled', false);
+  }
+/*   if (buttonsPanel.childElementCount === activeButtons.length) {
+    activeButtons.forEach(button => button.classList.remove('active'));
+  } */
+
+
+}
+
+buttonsPanel.addEventListener('click', manageOverlays);
+
+console.log(`Моя оценка: \n
+
 `);
