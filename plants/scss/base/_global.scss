@@ -46,6 +46,13 @@ ul {
   color: #E06733;
 }
 
+.drop-down-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
 
 @media all and (max-width: 768px){
   .container {
