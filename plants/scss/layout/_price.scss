@@ -11,32 +11,74 @@
   .prices {
 
     .price-list {
-      @include flexbox($flex-direction: column);
-      @include flex-align(space-evenly, center);
+
       border: 1px solid #e3e1d5;
       border-radius: 20px;
-      padding: 0 40px;
-      height: 279px;
+      padding: 40px;
       margin-top: 64px;
 
       .price-list-item {
-        @include flexbox;
-        @include flex-align(space-between, center);
         width: 250px;
         padding: 16px 40px;
         background-color: #edf2ec;
         border-radius: 20px;
+        margin-bottom: 15px;
+      }
+
+      .price-list-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .accordion-header {
+        @include flexbox;
+        @include flex-align(space-between, center);
+        
         cursor: pointer;
+        
 
-        span {
-          font-size: $regular-font-size;
+        &.open {
+          .prices-dropdown-icon {
+            transform: rotate(180deg);
+          }
         }
 
-        .prices-dropdown-icon {
-          background-color: #d9d9d9;
-          position: relative;
+          span {
+            font-size: $regular-font-size;
+          }
+          
+          .prices-dropdown-icon {
+            background-color: #d9d9d9;
+            position: relative;
+          }
+
+      }
+
+      .accordion-body {
+        display: none;
+
+        p {
+          color: $main-text-color;
+          font-weight: 400;
+          margin: 0;
+          font-size: 1rem;
+          margin-top: 10px;
         }
 
+        .price-holder {
+          margin: 10px 0;
+
+          span {
+            color: #E06733;
+            font-size: 1.2rem;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .accordion-body.visible {
+        margin-top: 10px;
+        border-top: 1px solid $main-text-color;
+        display: block;
       }
 
     }

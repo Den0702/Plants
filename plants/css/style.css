@@ -682,35 +682,61 @@ ul {
   align-items: stretch;
 }
 .price .prices .price-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
   border: 1px solid #e3e1d5;
   border-radius: 20px;
-  padding: 0 40px;
-  height: 279px;
+  padding: 40px;
   margin-top: 64px;
 }
 .price .prices .price-list .price-list-item {
+  width: 250px;
+  padding: 16px 40px;
+  background-color: #edf2ec;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.price .prices .price-list .price-list-item:last-child {
+  margin-bottom: 0;
+}
+.price .prices .price-list .accordion-header {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 250px;
-  padding: 16px 40px;
-  background-color: #edf2ec;
-  border-radius: 20px;
   cursor: pointer;
 }
-.price .prices .price-list .price-list-item span {
+.price .prices .price-list .accordion-header.open .prices-dropdown-icon {
+  transform: rotate(180deg);
+}
+.price .prices .price-list .accordion-header span {
   font-size: 20px;
 }
-.price .prices .price-list .price-list-item .prices-dropdown-icon {
+.price .prices .price-list .accordion-header .prices-dropdown-icon {
   background-color: #d9d9d9;
   position: relative;
+}
+.price .prices .price-list .accordion-body {
+  display: none;
+}
+.price .prices .price-list .accordion-body p {
+  color: #636060;
+  font-weight: 400;
+  margin: 0;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+.price .prices .price-list .accordion-body .price-holder {
+  margin: 10px 0;
+}
+.price .prices .price-list .accordion-body .price-holder span {
+  color: #E06733;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.price .prices .price-list .accordion-body.visible {
+  margin-top: 10px;
+  border-top: 1px solid #636060;
+  display: block;
 }
 .price .prices-help {
   text-align: right;
@@ -851,6 +877,10 @@ ul {
   background-color: #E06733;
   transition: all 0.3s;
 }
+.secondary-btn:disabled, .primary-btn:disabled {
+  background-color: initial;
+  color: #E06733;
+}
 
 .primary-btn {
   text-transform: uppercase;
@@ -868,6 +898,16 @@ ul {
   padding-block: 12px;
   border-radius: 5px;
   margin-inline: 15px;
+}
+
+.btn-order {
+  background-color: #fff;
+  padding: 5px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #636060;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .circle {
