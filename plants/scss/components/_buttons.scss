@@ -9,6 +9,12 @@
     background-color: #E06733;
     transition: all .3s;
   }
+
+  &:disabled {
+    background-color: initial;
+    color: #E06733;
+  }
+  
 }
 
 .primary-btn {
@@ -31,6 +37,16 @@
   padding-block: 12px;
   border-radius: 5px;
   margin-inline: 15px;
+}
+
+.btn-order {
+  background-color: #fff;
+  padding: 5px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: $main-text-color;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .circle {
