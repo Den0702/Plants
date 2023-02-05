@@ -781,6 +781,16 @@ ul {
   text-align: center;
   color: #499a18;
 }
+.contact .contact-bg .select-holder {
+  position: relative;
+}
+.contact .contact-bg .select-holder:hover {
+  width: 450px;
+  margin-left: auto;
+}
+.contact .contact-bg .select-holder:hover .select-list {
+  display: block;
+}
 .contact .contact-bg .contact-dropdown {
   display: flex;
   flex-wrap: wrap;
@@ -804,6 +814,37 @@ ul {
   position: relative;
   background-color: #aea1a1;
 }
+.contact .contact-bg .select-list {
+  background-color: #DCE9D9;
+  display: none;
+  overflow: hidden;
+  width: 450px;
+  margin-left: auto;
+  position: absolute;
+}
+.contact .contact-bg .select-list li {
+  cursor: pointer;
+  padding: 15px;
+}
+.contact .contact-bg .select-list li:hover {
+  color: green;
+}
+.contact .contact-bg .select-list.visible {
+  display: block;
+}
+.contact .contact-bg .address {
+  display: none;
+}
+.contact .contact-bg .address.visible {
+  display: block;
+  width: fit-content;
+  border: 1px solid black;
+  padding: 0 20px;
+  border-radius: 7px;
+  margin: auto;
+  margin-top: 200px;
+  background-color: #EDF2EC;
+}
 
 @media all and (min-width: 650px) and (max-width: 1139px) {
   .contact {
@@ -815,6 +856,13 @@ ul {
   }
   .contact .contact-bg .contact-dropdown {
     margin: auto;
+  }
+  .contact .contact-bg .select-holder:hover {
+    width: 450px;
+    margin: auto;
+  }
+  .contact .contact-bg .select-holder:hover .select-list {
+    display: block;
   }
   .contact .contact-heading {
     font-size: 40px;
