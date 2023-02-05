@@ -2,15 +2,27 @@
   padding-top: 32px;
   background-color: $bg-color-section;
 
-  .contact-bg{
+  .contact-bg {
     background-image: url("../assets/img/contact_woman 1.png");
     background-repeat: no-repeat;
     background-position: left;
     height: 480px;
-  
+
     .contact-heading {
       text-align: center;
       color: #499a18;
+    }
+
+    .select-holder {
+      position: relative;
+    }
+
+    .select-holder:hover {
+      width: 450px;
+      margin-left: auto;
+      .select-list {
+        display: block;
+      }
     }
 
     .contact-dropdown {
@@ -20,16 +32,53 @@
       width: 450px;
       padding: 0px 30px;
       background-color: #d6e7d2;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); ;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       margin-left: auto;
 
       .placeholder {
         @include primary-text($line-height: 52px);
       }
-      
+
       &-icon {
         position: relative;
         background-color: #aea1a1;
+      }
+    }
+
+    .select-list {
+      background-color: #DCE9D9;
+
+      display: none;
+      overflow: hidden;
+      width: 450px;
+      margin-left: auto;
+      position: absolute;
+
+      li {
+        cursor: pointer;
+        padding: 15px;
+        &:hover {
+          color: green;
+        }
+      }
+
+      &.visible {
+        display: block;
+      }
+    }
+
+    .address {
+      display: none;
+
+      &.visible {
+        display: block;
+        width: fit-content;
+        border: 1px solid black;
+        padding: 0 20px;
+        border-radius: 7px;
+        margin: auto;
+        margin-top: 200px;
+        background-color:  #EDF2EC;
       }
     }
   }
@@ -38,13 +87,21 @@
 @media all and (min-width: 650px) and (max-width: 1139px) {
   .contact {
     padding-top: 11px;
-    
+
     .contact-bg {
       height: 695px;
       background-position: bottom;
 
       .contact-dropdown {
         margin: auto;
+      }
+
+      .select-holder:hover {
+        width: 450px;
+        margin: auto;
+        .select-list {
+          display: block;
+        }
       }
     }
     .contact-heading {
