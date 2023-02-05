@@ -10,7 +10,7 @@ const manageOverlays = (event) => {
 
   const notActiveButtons = buttonsPanel.querySelectorAll(":not(.active)");
   const activeButtons = buttonsPanel.querySelectorAll(".active");
-  
+
   document.querySelectorAll(".service-filter-button").forEach((button) => {
     if (!button.className.includes("active")) {
       document
@@ -75,9 +75,31 @@ document.querySelectorAll(".accordion-header").forEach((accordionHeader) => {
   });
 });
 
+/* document.querySelector("body").addEventListener("click", () => {
+  document.querySelectorAll(".accordion-header").forEach((header) => {
+    header.classList.remove("open");
+    header.nextElementSibling.classList.remove("visible");
+  });
+}); */
 
+// document.querySelector(".contact-dropdown").addEventListener("click", (e) => {
+//   /* e.stopPropagation(); */
+//   e.target.nextElementSibling.classList.toggle('visible')
+// });
 
+document.querySelector(".select-list").addEventListener("click", (e) => {
+  if (e.target.tagName !== "LI") {
+    return;
+  }
 
+  document.querySelector(".contact-dropdown .placeholder").textContent = e.target.textContent;
+
+  document.querySelectorAll(".address").forEach((address) => {
+    address.classList.remove("visible");
+  });
+
+  document.querySelector(".city-address-" + e.target.dataset.address).classList.add("visible");
+});
 
 console.log(`Моя оценка: \n
 
