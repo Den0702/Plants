@@ -16,8 +16,10 @@ body {
   font-family: $primary-font-family;
 }
 
-a {
+a, a:visited {
   text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 ul {
@@ -27,9 +29,8 @@ ul {
 }
 
 .container {
-  padding: 0 70px;
+  max-width: 1195px;
   margin: 0 auto;
-  max-width: 1310px;
 }
 
 .section-heading {
@@ -54,15 +55,21 @@ ul {
 } 
 
 
-@media all and (max-width: 768px){
+@media all and (max-width: 767px){
   .container {
-    padding: 0 1%;
+    max-width: 625px;
   }
 }
 
 @media all and (max-width: 649px) {
+  body {
+    &.scroll-lock {
+      overflow: hidden;
+    }
+  }
+
   .container {
-    padding: 0 6%;
+    max-width: 470px;
   }
 
   .section-heading {
@@ -72,6 +79,15 @@ ul {
   
 }
 
+@media all and (max-width: 510px) {
+  .container {
+    width: 100%;
+    padding: 0 25px;
+  }
+}
+
+//@media all and (max-width: )
+
 @media all and (min-width: 650px) and (max-width: 1139px) {
   .section-heading {
     font-size: 35px;
@@ -79,21 +95,27 @@ ul {
   }
 }
 
-@media all and (min-width: 768px) and (max-width: 919px) {
+@media all and (min-width: 768px) and (max-width: 991px) {
   .container {
-    padding: 0 22px;
+    max-width: 668px;
   }
 }
 
-@media all and (min-width: 920px) and (max-width: 1139px) {
+@media all and (min-width: 992px) and (max-width: 1139px) {
   .container {
-    max-width: 1024px;
+    max-width: 830px;
+  }
+}
+
+@media all and (min-width: 1140px) and (max-width: 1199px) {
+  .container {
+    max-width: 940px;
   }  
 }
 
-@media all and (min-width: 1140px) and (max-width: 1439px) {
+@media all and (min-width: 1200px) and (max-width: 1439px) {
   .container {
-    max-width: 1140px;
-    //padding: 0;
+    max-width: 1082px;
   }
+  
 }

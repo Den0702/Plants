@@ -6,7 +6,6 @@
     @include flex-align(start, center);
 
     .service-heading {
-      padding: 0 38px;
       margin: 0; //todo: wyniesc to do styli globalnych
       color: #499A18;
     }
@@ -18,40 +17,51 @@
     margin-top: 70px;
 
     .infobox-overlay {
-      min-width: 280px;
 
-
-      .infobox {
-        height: 438px;
-        text-align: center;
-        padding: 0 4%;
-        margin-top: 49px;
-
-        .img-holder {
-          border-radius: 20px 20px 0 0;
-          height: 300px;
-          overflow: hidden;
-
-          .infobox-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            //vertical-align: top;
-          }
+      //min-width: 280px;
+      &.blurred {
+        .infobox:hover {
+          box-shadow: none;
         }
-
-        .infobox-caption {
-          border: 1px solid #cac7c7;
-          border-radius: 0 0 20px 20px;
-          border-top: 0;
-          padding: 6px 0;
-
-          .infobox-title {
-            @include primary-text(20px, 700, #E06733);
-          }
-        }
-
       }
+    }
+
+    .infobox {
+      //height: 438px;
+      text-align: center;
+      margin-inline: 40px;
+      margin-top: 49px;
+      border-radius: 20px;
+      cursor: pointer;
+      overflow: hidden;
+
+      &:hover {
+        box-shadow: 0 5px 20px rgb(0 0 0 / 25%);
+        transition: all .5s;
+      }
+
+      .img-holder {
+        height: 370px;
+
+        .infobox-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          //vertical-align: top;
+        }
+      }
+
+      .infobox-caption {
+        border: 1px solid #cac7c7;
+        border-radius: 0 0 20px 20px;
+        border-top: 0;
+        padding: 10px 0;
+
+        .infobox-title {
+          @include primary-text(20px, 700, #E06733);
+        }
+      }
+
     }
   }
 
@@ -64,17 +74,34 @@
   }
 }
 
+@media all and (min-width: 1200px) and (max-width: 1439px) {
+  .service {
+    .infoboxes {
+      .infobox {
+        //padding: 0px 25px;
+        .img-holder {
+          height: 320px;
+        }
+      }
+    }
+  }
+}
 
 @media all and (max-width: 1139px) {
   .service {
     padding: 32px 0 63px;
 
     .infoboxes {
-      @include flex-align(center, center);
+      @include flex-align(space-evenly, center);
       margin-top: 10px;
 
       .infobox-overlay {
-        min-width: 350px;
+
+        //min-width: 350px;
+        .infobox {
+          //padding: 0px 26px;
+          margin-inline: 26px;
+        }
       }
     }
 
@@ -82,13 +109,145 @@
       .service-heading {
         width: 331px;
         margin: 0.83em 0;
-        padding: 0 30px;
+        font-weight: 400;
       }
     }
 
     .buttons-panel {
-      margin-left: 17px;
+      margin-left: 0;
       margin-top: 12px;
+
+      .service-filter-button:nth-of-type(1) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+
+/* ponizsze media sa ustawione w kolejnosci malejacej by uwzglednic kaskadowosc */
+@media all and (max-width: 988px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: .7vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 851px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 6vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 835px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 6vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 803px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 6vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .service {
+    .infoboxes {
+      //@include flex-align(center, center);
+
+      .infobox-overlay {
+
+        //min-width: auto;
+        .infobox {
+          margin-inline: 5vw;
+        }
+      }
+    }
+
+  }
+}
+
+@media all and (max-width: 649px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 2vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 513px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 9vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 440px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 2vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 431px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 3vw;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 408px) {
+  .service {
+    .infoboxes {
+      .infobox-overlay {
+        .infobox {
+          margin-inline: 8vw;
+        }
+      }
     }
   }
 }

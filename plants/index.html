@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inika:wght@700&family=Inter:wght@400;700&family=Roboto:wght@300&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;700&family=Roboto:wght@300&display=swap"
     rel="stylesheet" />
   <link rel="icon" href="./assets/favicon.ico" />
   <link rel="stylesheet" href="./css/style.css" />
@@ -19,19 +19,17 @@
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <a href="#" class="logo">
+        <div class="logo">
           <img src="./assets/img/logo.svg" alt="Brand">
-        </a>
-        <ul class="menu">
-          <li class="menu-item"><a href="#welcome">Home</a></li>
+        </div>
+        <ul class="menu hamburger-menu">
+          <li class="menu-item active"><a href="#welcome">Home</a></li>
           <li class="menu-item"><a href="#about">About us</a></li>
           <li class="menu-item"><a href="#service">Service</a></li>
           <li class="menu-item"><a href="#price">Price</a></li>
-          <li class="menu-item"><a href="#contacts">Contacts</a></li>
+          <li class="menu-item"><a href="#contact">Contacts</a></li>
         </ul>
         <div class="mobile-hamburger">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
         </div>
@@ -88,8 +86,9 @@
           </div>
         </div>
         <div class="row infoboxes">
-          <div class="infobox-overlay col-33p gardens">
+          <div class="infobox-overlay col col-33p col-50p gardens">
             <div class="infobox">
+
               <div class="img-holder">
                 <img src="./assets/img/first.jpg" class="infobox-img" alt="Planting">
               </div>
@@ -97,9 +96,10 @@
                 <h3 class="infobox-title">Garden care</h3>
                 <p class="excerpt">Lorem ipsum dolor sit amet</p>
               </div>
+
             </div>
           </div>
-          <div class="infobox-overlay col-33p planting">
+          <div class="infobox-overlay col col-33p col-50p planting">
             <div class="infobox">
               <div class="img-holder">
                 <img src="./assets/img/first-1.jpg" class="infobox-img" alt="Garden care">
@@ -108,9 +108,11 @@
                 <h3 class="infobox-title">Planting</h3>
                 <p class="excerpt">Lorem ipsum dolor sit amet</p>
               </div>
+
+
             </div>
           </div>
-          <div class="infobox-overlay col-33p gardens">
+          <div class="infobox-overlay col col-33p col-50p gardens">
             <div class="infobox">
               <div class="img-holder">
                 <img src="./assets/img/first-2.jpg" class="infobox-img" alt="Planting">
@@ -119,9 +121,11 @@
                 <h3 class="infobox-title">Garden care</h3>
                 <p class="excerpt">Lorem ipsum dolor sit amet</p>
               </div>
+
+
             </div>
           </div>
-          <div class="infobox-overlay col-33p planting">
+          <div class="infobox-overlay col col-33p col-50p planting">
             <div class="infobox">
               <div class="img-holder">
                 <img src="./assets/img/first-3.jpg" class="infobox-img" alt="Lawn care">
@@ -130,9 +134,11 @@
                 <h3 class="infobox-title">Planting</h3>
                 <p class="excerpt">Lorem ipsum dolor sit amet</p>
               </div>
+
+
             </div>
           </div>
-          <div class="infobox-overlay col-33p lawn">
+          <div class="infobox-overlay col col-33p col-50p lawn">
             <div class="infobox">
               <div class="img-holder">
                 <img src="./assets/img/first-4.jpg" class="infobox-img" alt="Planting">
@@ -141,9 +147,11 @@
                 <h3 class="infobox-title">Lawn care</h3>
                 <p class="excerpt">Lorem ipsum dolor sit amet</p>
               </div>
+
+
             </div>
           </div>
-          <div class="infobox-overlay col-33p planting">
+          <div class="infobox-overlay col col-33p col-50p planting">
             <div class="infobox">
               <div class="img-holder">
                 <img src="./assets/img/first-5.jpg" class="infobox-img" alt="Garden care">
@@ -152,6 +160,8 @@
                 <h3 class="infobox-title">Planting</h3>
                 <p class="excerpt">Lorem ipsum dolor sit amet</p>
               </div>
+
+
             </div>
           </div>
         </div>
@@ -163,17 +173,16 @@
           <h2 class="section-heading prices-heading">Prices</h2>
           <ul class="price-list">
             <li class="price-list-item">
-              <!-- todo: zrobic div'a z overflow: hidden, ktory ma sie rozwijac przy kliknieciu na price-list-item-->
-              <!-- i umiescic to wszystkich dzieci price-list-item'a do niego-->
-
               <div class="accordion-header">
                 <span>Basics</span>
                 <div class="prices-dropdown-icon circle">
-                  <object type="image/svg+xml" data="./assets/img/arrow-down.svg" class="drop-down-arrow" width="8"
-                    height="6"></object>
+                  <svg width="6" height="4" class="drop-down-arrow" viewBox="0 0 6 4" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.00003 3.0129L1.00003 1.01302" stroke-width="0.5" stroke-linecap="round" />
+                    <path d="M3 3.0127L5 1.0127" stroke-width="0.5" stroke-linecap="round" />
+                  </svg>
                 </div>
               </div>
-
               <div class="accordion-body">
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -187,11 +196,13 @@
               <div class="accordion-header">
                 <span>Standard</span>
                 <div class="prices-dropdown-icon circle">
-                  <object type="image/svg+xml" data="./assets/img/arrow-down.svg" class="drop-down-arrow" width="8"
-                    height="6"></object>
+                  <svg width="6" height="4" class="drop-down-arrow" viewBox="0 0 6 4" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.00003 3.0129L1.00003 1.01302" stroke-width="0.5" stroke-linecap="round" />
+                    <path d="M3 3.0127L5 1.0127" stroke-width="0.5" stroke-linecap="round" />
+                  </svg>
                 </div>
               </div>
-
               <div class="accordion-body">
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -205,11 +216,13 @@
               <div class="accordion-header">
                 <span>Pro care</span>
                 <div class="prices-dropdown-icon circle">
-                  <object type="image/svg+xml" data="./assets/img/arrow-down.svg" class="drop-down-arrow" width="8"
-                    height="6"></object>
+                  <svg width="6" height="4" class="drop-down-arrow" viewBox="0 0 6 4" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.00003 3.0129L1.00003 1.01302" stroke-width="0.5" stroke-linecap="round" />
+                    <path d="M3 3.0127L5 1.0127" stroke-width="0.5" stroke-linecap="round" />
+                  </svg>
                 </div>
               </div>
-
               <div class="accordion-body">
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -232,40 +245,83 @@
       <div class="container">
         <div class="contact-bg">
           <h2 class="section-heading contact-heading">Contact us</h2>
-          <div class="select-holder">
+          <div class="contact-dropdown-holder">
             <div class="contact-dropdown">
               <span class="placeholder">City</span>
               <div class="contact-dropdown-icon circle">
-                <object type="image/svg+xml" data="./assets/img/arrow-down-contact.svg" class="drop-down-arrow"
-                  width="8" height="6"></object>
+                <svg width="6" height="4" class="drop-down-arrow" viewBox="0 0 6 4" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.00003 2.99997L1.00002 1.00008" stroke="white" stroke-width="0.5" stroke-linecap="round" />
+                  <path d="M3 3L5 1" stroke="white" stroke-width="0.5" stroke-linecap="round" />
+                </svg>
               </div>
+              <ul class="select-list">
+                <li class="select-option" data-address="1">Yonkers, NY</li>
+                <li class="select-option" data-address="2">Canandaigua, NY</li>
+                <li class="select-option" data-address="3">Sherrill, NY</li>
+                <li class="select-option" data-address="4">New York City</li>
+              </ul>
             </div>
-            <ul class="select-list">
-              <li class="select-option" data-address="1">Yonkers, NY</li>
-              <li class="select-option" data-address="2">Canandaigua, NY</li>
-              <li class="select-option" data-address="3">Sherrill, NY</li>
-              <li class="select-option" data-address="4">New York City</li>
-            </ul>
-          </div>
-          <div class="address city-address-1">
-            <p>City <span class="city">Yonkers, NY</span></p>
-            <p>Phone <span class="phone">+1	914	678 0003</span></p>
-            <p>Office adress <span class="adress">511 Warburton Ave</span></p>
-          </div>
-          <div class="address city-address-2">
-            <p>City <span class="city">Canandaigua, NY</span></p>
-            <p>Phone <span class="phone">+2	915	678 0003</span></p>
-            <p>Office adress <span class="adress">511 Warburton Ave</span></p>
-          </div>
-          <div class="address city-address-3">
-            <p>City <span class="city">Sherrill, NY</span></p>
-            <p>Phone <span class="phone">+7	914	670 0003</span></p>
-            <p>Office adress <span class="adress">14 WEST Noyes BLVD</span></p>
-          </div>
-          <div class="address city-address-4">
-            <p>City <span class="city">New York City</span></p>
-            <p>Phone <span class="phone">+9	014	678 0003</span></p>
-            <p>Office adress <span class="adress">9 East 91st Street</span></p>
+            <div class="address city-address-1">
+              <div class="address-inner">
+                <ul class="address-properties">
+                  <li>City</li>
+                  <li>Phone</li>
+                  <li>Office</li>
+                </ul>
+                <ul class="address-values">
+                  <li class="address-value">Yonkers, NY</li>
+                  <li class="address-value">+1 914 678 0003</li>
+                  <li class="address-value">511 Warburton Ave</li>
+                </ul>
+              </div>
+              <a class="address-btn" href="tel:+15853930001">Call</a>
+            </div>
+            <div class="address city-address-2">
+              <div class="address-inner">
+                <ul class="address-properties">
+                  <li>City</li>
+                  <li>Phone</li>
+                  <li>Office address</li>
+                </ul>
+                <ul class="address-values">
+                  <li class="address-value">Canandaigua, NY</li>
+                  <li class="address-value">+2 915 678 0003</li>
+                  <li class="address-value">1 Green Ave</li>
+                </ul>
+              </div>
+              <a class="address-btn" href="tel:+12124560002">Call</a>
+            </div>
+            <div class="address city-address-3">
+              <div class="address-inner">
+                <ul class="address-properties">
+                  <li>City</li>
+                  <li>Phone</li>
+                  <li>Office address</li>
+                </ul>
+                <ul class="address-values">
+                  <li class="address-value">Sherrill, NY</li>
+                  <li class="address-value">+7 914 670 0003</li>
+                  <li class="address-value">14 WEST Noyes BLVD</li>
+                </ul>
+              </div>
+              <a class="address-btn" href="tel:+19146780003">Call</a>
+            </div>
+            <div class="address city-address-4">
+              <div class="address-inner">
+                <ul class="address-properties">
+                  <li>City</li>
+                  <li>Phone</li>
+                  <li>Office address</li>
+                </ul>
+                <ul class="address-values">
+                  <li class="address-value">New York City</li>
+                  <li class="address-value">+9 014 678 0003</li>
+                  <li class="address-value">9 East 91st Street</li>
+                </ul>
+              </div>
+              <a class="address-btn" href="tel:+19146780003">Call</a>
+            </div>
           </div>
         </div>
       </div>
@@ -274,38 +330,33 @@
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-contacts">
-        <span>©</span>
-        <span>2023</span>
-        <span class="github">
+        <span>©2023</span>
+        <span class="footer-link">
           <a href="https://github.com/Den0702?tab=repositories">github</a>
         </span>
       </div>
 
-      <a href="https://rs.school/js-stage0/">Rolling Scopes School</a>
+      <a href="https://rs.school/js-stage0/" class="footer-link">Rolling Scopes School</a>
 
       <ul class="social-media">
         <li class="social-item">
-          <a href="#" class="">
-            <object type="image/svg+xml" data="./assets/img/social-list/inst.svg" class="social-icon">
-            </object>
+          <a href="#">
+            <img src="./assets/img/social-list/inst.svg" alt="instagram icon">
           </a>
         </li>
         <li class="social-item">
           <a href="#">
-            <object type="image/svg+xml" data="./assets/img/social-list/fb.svg" class="social-icon">
-            </object>
+            <img src="./assets/img/social-list/fb.svg" alt="facebook icon">
           </a>
         </li>
         <li class="social-item">
           <a href="#">
-            <object type="image/svg+xml" data="./assets/img/social-list/tw.svg" class="social-icon">
-            </object>
+            <img src="./assets/img/social-list/tw.svg" alt="twitter icon">
           </a>
         </li>
         <li class="social-item">
           <a href="#">
-            <object type="image/svg+xml" data="./assets/img/social-list/pinterest.svg" class="social-icon">
-            </object>
+            <img src="./assets/img/social-list/pinterest.svg" alt="pinterest icon">
           </a>
         </li>
       </ul>
