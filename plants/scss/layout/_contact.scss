@@ -13,74 +13,145 @@
       color: #499a18;
     }
 
-    .select-holder {
-      position: relative;
-    }
-
-    .select-holder:hover {
-      width: 450px;
+    .contact-dropdown-holder {
+      max-width: 450px;
       margin-left: auto;
-      .select-list {
-        display: block;
-      }
     }
 
     .contact-dropdown {
       @include flexbox;
       @include flex-align(space-between, center);
 
-      width: 450px;
+      position: relative;
       padding: 0px 30px;
       background-color: #d6e7d2;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      margin-left: auto;
+      cursor: pointer;
 
       .placeholder {
         @include primary-text($line-height: 52px);
       }
 
-      &-icon {
+      .contact-dropdown-icon {
         position: relative;
         background-color: #aea1a1;
+      }
+
+      &.open {
+        background-color: #c1e698;
+
+        .contact-dropdown-icon {
+          transform: rotate(180deg);
+          background-color: #8ba07e;
+        }
       }
     }
 
     .select-list {
+      position: absolute;
       background-color: #DCE9D9;
 
       display: none;
       overflow: hidden;
-      width: 450px;
+      width: 100%;
       margin-left: auto;
       position: absolute;
+      top: 53px;
+      left: 0;
 
       li {
         cursor: pointer;
-        padding: 15px;
+        margin-bottom: 25px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #d6e7d2;
+        transition: all .4s;
+
+        &:nth-of-type(1) {
+          margin-top: 10px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 7px;
+        }
+
         &:hover {
-          color: green;
+          color: #499a18;
+          border-bottom: 1px solid #717171;
         }
       }
 
-      &.visible {
+      &.open {
         display: block;
+        box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+        background-color: rgb(214 231 210);
+        padding: 10px 30px;
+        transition: all .4s;
       }
     }
 
     .address {
       display: none;
+      line-height: 40px;
 
       &.visible {
-        display: block;
-        width: fit-content;
+        @include flexbox($flex-direction: column);
+        @include flex-align(center, center);
+
         border: 1px solid black;
-        padding: 0 20px;
+        padding: 10px 25px;
         border-radius: 7px;
         margin: auto;
-        margin-top: 200px;
-        background-color:  #EDF2EC;
+        margin-top: 30px;
+        background-color: #EDF2EC;
+      }
+
+      .address-inner {
+        @include flexbox;
+        gap: 15px;
+        align-self: flex-start;
+
+        .address-value {
+          color: #717171;
+        }
+
+      }
+      .address-btn {
+        line-height: initial;
       }
     }
+  }
+
+}
+
+@media all and (max-width: 649px) {
+  .contact {
+    .contact-bg {
+      background-image: url(../assets/img/contact_woman-mobile.png);
+      background-position: bottom;
+      height: 415px;
+
+      .contact-dropdown-holder {
+        max-width: 350px;
+      }
+
+    }
+  }
+
+}
+
+@media all and (max-width: 767px) {
+  .contact {
+    .contact-bg {
+      .contact-dropdown-holder {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1139px) {
+  .contact-dropdown-holder {
+    margin: auto;
   }
 }
 
@@ -90,20 +161,10 @@
 
     .contact-bg {
       height: 695px;
+      background-image: url(../assets/img/contact_woman-tablet.png);
       background-position: bottom;
-
-      .contact-dropdown {
-        margin: auto;
-      }
-
-      .select-holder:hover {
-        width: 450px;
-        margin: auto;
-        .select-list {
-          display: block;
-        }
-      }
     }
+
     .contact-heading {
       font-size: 40px;
       margin-bottom: 100px;

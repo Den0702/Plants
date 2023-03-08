@@ -12,18 +12,25 @@
 
 /* || TEXT || */
 /* primary-font-weight to jest domyslny weigth, $main-text-color - domyslny kolor dla tego mixina */
-@mixin primary-text ($line-height, 
-                     $font-weight: $primary-font-weight, 
-                     $color: $main-text-color, 
-                     $font-size: $regular-font-size) {
-  font-family: $primary-font-family;
-  line-height: $line-height;
-  font-weight: $font-weight;
-  color: $color;
-  font-size: $font-size;
+@mixin primary-text ($line-height,
+  $font-weight: $primary-font-weight,
+  $color: $main-text-color,
+  $font-size: $regular-font-size) {
+      font-family: $primary-font-family;
+      line-height: $line-height;
+      font-weight: $font-weight;
+      color: $color;
+      font-size: $font-size;
 }
 
-
- 
-
-
+@mixin social-list {
+  %social-media {
+    @include flexbox($flex-wrap: nowrap);
+    @include flex-align(space-between, center);
+    flex-basis: 180px;
+  
+  }
+  .social-item {
+    height: 32px;
+  }
+}

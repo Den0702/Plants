@@ -2,6 +2,7 @@
   font-weight: $secondary-font-weight;
   padding: 40px 104px 121px;
 
+
   //redefiniuje wlasciwosci kontenera pod wymogi tej sekcji
   .container {
     @include flexbox($flex-wrap: nowrap);
@@ -16,13 +17,20 @@
       border-radius: 20px;
       padding: 40px;
       margin-top: 64px;
+      width: 350px;
+      margin: auto;
 
       .price-list-item {
-        width: 250px;
-        padding: 16px 40px;
+        width: 100%;
+        //padding: 16px 40px;
         background-color: #edf2ec;
         border-radius: 20px;
         margin-bottom: 15px;
+        overflow: hidden;
+
+        &.open {
+          background-color: #D6E7D2;
+        }
       }
 
       .price-list-item:last-child {
@@ -32,24 +40,42 @@
       .accordion-header {
         @include flexbox;
         @include flex-align(space-between, center);
-        
-        cursor: pointer;
-        
+
+        &:hover {
+          cursor: pointer;
+          background-color: #d6e7d2;
+          transition: background-color .3s;
+        }
+
+        padding: 16px 40px;
+
+
+        span {
+          font-size: $regular-font-size;
+        }
 
         &.open {
           .prices-dropdown-icon {
             transform: rotate(180deg);
+            background-color: #aea1a1;
+            
+            .drop-down-arrow {
+              stroke: #fff;
+            }
           }
         }
 
-          span {
-            font-size: $regular-font-size;
-          }
+        .prices-dropdown-icon {
+          background-color: #d9d9d9;
+          position: relative;
           
-          .prices-dropdown-icon {
-            background-color: #d9d9d9;
-            position: relative;
+          .drop-down-arrow {
+            stroke: #717171;
           }
+/*           .drop-down-arrow:hover {
+            cursor: pointer;
+          } */
+        }
 
       }
 
@@ -76,7 +102,9 @@
       }
 
       .accordion-body.visible {
-        margin-top: 10px;
+        //margin-top: 10px;
+        margin: 0 40px 0;
+        padding-bottom: 16px;
         border-top: 1px solid $main-text-color;
         display: block;
       }
@@ -87,6 +115,7 @@
   .prices-help {
     text-align: right;
     flex-basis: 500px;
+    height: 418px;
 
     background-image: url(../assets/img/leafs-small.png);
     background-repeat: no-repeat;
@@ -95,7 +124,8 @@
 
   .prices-heading {
     font-family: $primary-font-family;
-    margin-top: 0;//todo: wyniesc to do styli globalnych
+    margin-top: 0; //todo: wyniesc to do styli globalnych
+    margin-bottom: 70px;
   }
 
   .prices-help-heading {
@@ -107,18 +137,131 @@
 
 }
 
+
 @media all and (max-width: 1439px) {
   .price {
     padding: 40px 46px 92px;
-    
+
     .prices-help {
       padding-top: 106px;
-      height: 455px;
+      height: 474px;
+      margin-left: 15px;
 
+      .prices-help-heading {
+        font-size: 33px;
+        margin-bottom: 44px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1139px) {
+  .price {
+    .prices {
+      .price-list {
+        max-width: 300px;
+        padding: 26px;
+      }
+    }
+  }
+}
+
+/* @media all and (max-width: 919px) {
+  .price {
+    .container {
+      max-width: 100%;
+    }
+  }
+} */
+
+@media all and (max-width: 767px) {
+  .price {
+    .container {
+      display: block; //zmieniam flex'a na po prostu block
+    }
+
+    .prices-help {
+      margin-left: 0;
+
+      .prices-help-heading {
+        text-align: left;
+      }
+
+    }
+  }
+}
+
+
+
+@media all and (max-width: 988px) {
+  .price {
+    .prices {
+
+      .prices-heading {
+        margin-bottom: 40px;
+      }
+
+      .price-list {
+        .accordion-body {
+          &.visible {
+            margin: 0 24px 0;
+            
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .prices-help {
       .prices-help-heading {
         font-size: 25px;
       }
+    }
+  }
+}
 
+@media all and (max-width: 649px) {
+  .price {
+    padding: 40px 0 92px;
+
+    .prices {
+      .price-list {
+        max-width: 270px;
+
+        .price-list-item {
+          width: 100%;
+        }
+
+        .accordion-body {
+          &.visible {
+
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        .accordion-header {
+          padding: 13px 30px;
+
+          span {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .prices-help {
+      background-image: none;
+      height: auto;
+
+      .btn {
+        display: block;
+        margin: auto;
+
+      }
     }
   }
 }
