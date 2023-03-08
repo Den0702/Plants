@@ -24,17 +24,26 @@
 
 }
 
-
+@media all and (max-width: 1199px) {
+  .about {
+    .about-bg {
+      background-image: url("../assets/img/houseplant-tablet.png");
+      background-position: right;
+      transition: all .5s;
+    }
+  }
+}
 
 @media all and (max-width: 1139px) {
   .about {
     .about-bg {
       background-image: url("../assets/img/houseplant-tablet.png");
       background-position: bottom;
+      transition: none;
     }
   }
-
 }
+
 @media all and (max-width: 649px){
   .about {
     padding-top: 0;
@@ -45,7 +54,7 @@
       //background-position: bottom;
     }
     .about-description {
-      padding: 25px 0 190px;
+      padding: 25px 0 190px;                                                                                       
 
       .primary-paragraph {
         @include primary-text($line-height: 25px, $font-size: 15px);
@@ -61,15 +70,19 @@
     padding-top: 57px;
 
     .about-description {
-      max-width: 687px;
-      height: 653px;
-      padding: 0 0 40px 30px;
+      max-width: 100%;
+      height: 600px;
+      padding: 0;
 
       .about-heading {
         text-align: center;
         padding-inline: 80px;
         margin-top: 0;
         margin-bottom: 55px;
+      }
+
+      .primary-paragraph {
+        @include primary-text($line-height: 27px, $font-size: 17px); 
       }
 
     }

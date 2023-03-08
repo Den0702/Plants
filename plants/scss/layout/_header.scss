@@ -1,3 +1,12 @@
+/* %hamburger-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 8px auto;
+  background-color: #717171;
+  transition: all 0.3s ease-in-out;
+} */
+
 .header {
   font-weight: $primary-font-weight;
   background-color: $bg-color-section;
@@ -13,12 +22,12 @@
     @include flexbox($flex-wrap: nowrap);
     @include flex-align(space-between, center);
 
-    padding: 32px 15px;
+    padding-block: 32px;
 
     .logo {
       height: 22px;
       align-self: flex-start;
-      margin: 5px 15px;
+      margin: 20px 15px;
 
       img {
         height: 100%;
@@ -26,15 +35,22 @@
     }
 
     .menu {
-      flex-basis: 500px;
+      flex-basis: 501px;
+      @include flexbox($flex-wrap: nowrap);
+      justify-content: space-between;
 
       .menu-item {
-        display: inline-block;
-        margin: 0 21.7px;
         padding: 20px 0;
         line-height: 50px;
         font-family: $secondary-font-family;
         font-weight: $primary-font-weight;
+
+        &.active {
+          a {
+            color: #E06733;
+            font-weight: bold;
+          }
+        }
 
         a {
           color: #010201;
@@ -47,14 +63,14 @@
 
       }
 
-      
+
     }
 
-    .mobile-hamburger {
-      cursor: pointer;
-      display: none;
-    }
+  }
 
+  .mobile-hamburger {
+    cursor: pointer;
+    display: none;
   }
 
   .welcome {
@@ -64,21 +80,23 @@
     padding: 0 27px 82px;
 
     .welcome-bg {
+      background-image: url(../assets/img/leafs.png);
+      background-repeat: no-repeat;
+      background-position-x: left;
+      //max-width: 1220px;
+      padding-top: 15px;
+      margin: auto;
+
       .welcome-description {
         width: 534.6px;
         font-size: $regular-font-size;
-        padding: 33px 0 43px;
+        padding-bottom: 66px;
         margin-left: auto;
 
         &-paragraph {
           @include primary-text(35px); //line-height is the parameter
         }
       }
-
-
-      background-image: url(../assets/img/leafs.png);
-      background-repeat: no-repeat;
-      background-position: left;
     }
 
   }
@@ -87,6 +105,12 @@
 
 @media all and (max-width: 649px) {
   .header {
+    .nav {
+      .logo {
+        margin-inline: 0;
+      }
+    }
+
     .welcome {
       padding: 0;
 
@@ -96,7 +120,7 @@
         .welcome-description {
           width: 100%;
           padding-top: 0;
-          
+
           &-paragraph {
             @include primary-text($line-height: 25px, $font-size: 16px);
             /*         margin: 0;
@@ -107,9 +131,18 @@
         }
       }
     }
+
     .main-header {
       font-size: 25px;
       line-height: 35px;
+    }
+  }
+}
+
+@media all and (max-width: 510px) {
+  .header {
+    .nav {
+      //padding: 32px 15px;
     }
   }
 }
@@ -118,29 +151,132 @@
   .header {
 
     .nav {
-      .menu {
-        display: none;
-      }
+      .hamburger-menu {
+        display: block; //usuniecie flex'a
+        position: fixed;
+        background-color: #edf2ec;
+        top: 80px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        left: 100%;
 
-      .mobile-hamburger {
-        display: block;
+        &.active {
+          left: 0;
+          opacity: 0.95;
+          transition-property: all;
+          transition-duration: .3s;
+          transition-delay: .1s;
+          transition-timing-function: ease;
 
-        .hamburger-line {
-          display: block;
-          width: 40px;
-          height: 2px;
-          margin: 8px auto;
-          background-color: #717171;
-          transition: all 0.3s ease-in-out;
+          a {
+            box-shadow: inset 0 0 0 0 #e06733;
+            display: inline-block;
+            width: 154px;
+            border-radius: 5px;
+            font-size: larger;
+
+            &:hover {
+              background-color: #E06733;
+              color: #fff;
+              box-shadow: inset 100px 0 0 0 #e06733;
+              transition: all .4s ease-in-out;
+            }
+
+          }
+
+        }
+
+        .menu-item {
+          margin: 0;
         }
       }
     }
-/*     .welcome {
+
+    .mobile-hamburger {
+      display: block;
+      position: relative;
+      width: 40px;
+      height: 26px;
+
+      .hamburger-line {
+        /* @extend %hamburger-line; */
+        position: absolute;
+
+        display: block;
+        width: 100%;
+        height: 2px;
+        //margin: 8px auto;
+        background-color: #717171;
+        transition: all 0.3s ease-in-out;
+
+        &:nth-of-type(1) {
+          top: 8px;
+        }
+
+        &:nth-of-type(2) {
+          top: 16px;
+        }
+      }
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+
+        display: block;
+        width: 100%;
+        height: 2px;
+        //margin: 8px auto;
+        background-color: #717171;
+        transition: all 0.3s ease-in-out;
+
+        /* @extend %hamburger-line; */
+
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+
+      &.active {
+
+        &::before {
+          transform: rotate(45deg);
+          top: 12px;
+        }
+
+        &::after {
+          transform: rotate(135deg);
+          bottom: 12px;
+        }
+
+        .hamburger-line {
+
+          &:nth-of-type(1),
+          &:nth-of-type(2) {
+            transform: scale(0);
+          }
+        }
+      }
+    }
+  }
+
+  /*     .welcome {
       .welcome-bg {
         max-width: 739px;
         margin: auto;
       }
     } */
+}
+
+@media all and (min-width: 768px) and (max-width: 1139px) {
+  .menu {
+    .menu-item {
+      padding: 5px 0;
+      margin: 0 21px;
+    }
   }
 }
 
@@ -148,30 +284,23 @@
   .header {
     .main-header {
       font-size: 35px;
-      margin: 0 0 36px; 
+      margin: 0 0 36px;
     }
 
-    .nav {
+/*     .nav {
       .logo {
         margin: 12px 15px;
-      }
+      } 
 
-      .menu {
-        padding-left: 7px;
-        .menu-item {
-          padding: 5px 0;
-          margin: 0 21px;
-        }
-      }
-
-    }
+    }*/
 
     .welcome {
-      padding: 0px 27px 66px;
+      padding: 0px 5px 66px;
 
       .welcome-bg {
         background-image: url(../assets/img/leafs-tablet.png);
         background-position: right;
+        max-width: 735px;
 
         .welcome-description {
           margin-left: 0;
@@ -190,6 +319,7 @@
 
 }
 
+
 @media all and (min-width: 1140px) and (max-width: 1439px) {
   .header {
     .welcome {
@@ -197,6 +327,8 @@
 
       .welcome-bg {
         background-image: url("../assets/img/leafs-lg-tablet.png");
+        max-width: 965px;
+
         .welcome-description-paragraph {
           font-size: 18px;
         }
