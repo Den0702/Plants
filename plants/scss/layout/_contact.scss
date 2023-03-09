@@ -99,16 +99,16 @@
 
         border: 1px solid black;
         padding: 10px 25px;
-        border-radius: 7px;
+        border-radius: 20px;
         margin: auto;
         margin-top: 30px;
         background-color: #EDF2EC;
       }
 
       .address-inner {
-        @include flexbox;
+        @include flexbox($flex-wrap: nowrap);
         gap: 15px;
-        align-self: flex-start;
+        align-self: stretch;
 
         .address-value {
           color: #717171;
@@ -123,6 +123,23 @@
 
 }
 
+@media all and (max-width: 360px) {
+  .contact {
+    .contact-bg {
+      .address {
+        font-size: smaller;
+
+        .address-property:last-child {
+          line-height: 1;
+        }
+
+        .address-values {
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
 @media all and (max-width: 649px) {
   .contact {
     .contact-bg {
@@ -132,6 +149,10 @@
 
       .contact-dropdown-holder {
         max-width: 350px;
+        
+        .placeholder {
+          font-size: $small-font-size;
+        }
       }
 
     }

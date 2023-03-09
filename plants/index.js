@@ -114,7 +114,7 @@ const handleDropdown = (e) => {
 }
 
 const handleItemSelect = (e) => {
-  if (!e.target.closest('.select-list')) {
+  if (!e.target.closest('.select-option')) {
     return;
   }
   dropdownPlaceholder.textContent = e.target.textContent;
